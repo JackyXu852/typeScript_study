@@ -1,0 +1,31 @@
+{
+	// ts编译配置文件，ts编译器根据他的信息来对代码进行编译
+	"include": [
+		"src/**/*", //表示根目录下的src文件里的任意路径（**）的任意文件（*）
+	],
+	// "exclude": [
+	//     // "node_modules",
+	//     // "**/*.spec.ts"
+	//     "src/hello/**/*",//排除hello里面的文件不编译
+	// ]
+	"compilerOptions": {
+		"target": "es6",//默认转换为es3,
+		//可写一个错误的版本 报错会返回所有版本 写ES版本 'es3', 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'esnext'.
+		"module":"es6", // 使用哪个模块化的规范 当ts中未使用引入的模块 则编译时就不会引入未使用的模块
+		//'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'.
+		// "lib":["1"],//指定项目中使用的库 一般不设置 默认是浏览器运行的库
+		//'es5', 'es6', 'es2015', 'es7', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'esnext', 'dom', 'dom.iterable', 'webworker', 'webworker.importscripts', 'webworker.iterable', 'scripthost', 'es2015.core', 'es2015.collection', 'es2015.generator', 'es2015.iterable', 'es2015.promise', 'es2015.proxy', 'es2015.reflect', 'es2015.symbol', 'es2015.symbol.wellknown', 'es2016.array.include', 'es2017.object', 'es2017.sharedmemory', 'es2017.string', 'es2017.intl', 'es2017.typedarrays', 'es2018.asyncgenerator', 'es2018.asynciterable', 'es2018.intl', 'es2018.promise', 'es2018.regexp', 'es2019.array', 'es2019.object', 'es2019.string', 'es2019.symbol', 'es2020.bigint', 'es2020.promise', 'es2020.sharedmemory', 'es2020.string', 'es2020.symbol.wellknown', 'es2020.intl', 'es2021.promise', 'es2021.string', 'es2021.weakref', 'esnext.array', 'esnext.symbol', 'esnext.asynciterable', 'esnext.intl', 'esnext.bigint', 'esnext.string', 'esnext.promise', 'esnext.weakref'.
+		"outDir": "./dist",//编译后js的文件目录
+		// "outFile": "./dist/index.js"//将编译后全局作用域中的js合并到一个文件中 //只有module='amd或者'system'才能合并,一般不使用 一般是结合打包工具使用
+		"allowJs": true,//是否对js文件进行编译 默认是false
+		"checkJs": false,//是否检查js符合语法规范
+		"removeComments": true, //编译后是否移除注释
+		// "noEmit": true,//是否不生成编译后的文件
+		"noEmitOnError": true,//当有编译有错误的时候 不生成编译后的文件 目的：为了避免有安全隐患的代码存到dist目录中
+		"strict": true,//所有严格模式的总开关，如果为true，则所有严格模式都为true（包括下面单独配置的）,如果想单独配置严格模式，就在下面配置
+		"alwaysStrict": true,//编译后的文件是否为严格模式 默认值为false 严格模式比普通模式的语法要严格 在浏览器里执行的性能更好
+		"noImplicitAny": true,//不允许不设置类型时默认为Any类型,不允许隐式的Any类型, 默认值为false
+		"noImplicitThis": true,//不允许不明确类型的this,默认值为false
+		"strictNullChecks": true,//严格检查控制 默认为false
+	},
+}

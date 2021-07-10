@@ -4,7 +4,7 @@
  * @Author: Olivia
  * @Date: 2021-07-05 17:03:40
  * @LastEditors: Olivia
- * @LastEditTime: 2021-07-06 11:26:56
+ * @LastEditTime: 2021-07-10 14:43:08
  */
 
 // 1.字面量-------------------------------------------------------------------------------------------------------------------
@@ -71,3 +71,92 @@ function getLength(num:number | string):number{
 }
 // console.log('getLength(1234)',getLength(1234))
 // console.log('getLength("qw")',getLength("qw"))
+
+// 6.void---------------------------------------------------------------------------------------
+// void 表示空值 无返回值 它表示没有任何类型
+function fn():void{
+
+    // return 123 报错 
+
+    // return null;
+    // return undefined;
+    // return
+    
+}
+// 声明一个void类型的变量没有什么大用，因为你只能为它赋予undefined和null：
+let unusable: void = undefined;
+
+// 7.never------------------------------------------------------------------------------------------
+// 表示无值 表示的是那些永不存在的值的类型 函数报错就会立即停止执行 不会有返回值
+function fn1():never{
+
+    throw new Error('报错了');
+}
+
+// 8.object--------------------------------------------------------------------------------------------
+//object表示一个js对象
+let xx:object;
+xx = {}
+xx = function(){}
+
+//用{}指定对象内包含哪些属性
+//语法：{属性名:属性值,属性名:属性值}
+//{}内定义了哪些属性，赋值时就必须有哪些属性，但是属性名后面加上? 表示该属性是可选的
+let a : {name: string,age?:number};
+
+a = {name:'张三',age:18}
+
+a = {name:'李四'}
+//[myPropName:string]:any 表示可以添加任意个属性，这里的属性名设置为string类型了
+let b:{name: string,[myPropName:string]:any};
+
+b = {name:'张三',a:12,b:'xx',c:true}
+
+//设置函数结构的类型声明
+//语法：(形参：类型,形参：类型)=>返回值类型
+let c:(a: number,b: number)=>number;
+
+// c = function(n1,n2,n3){ //报错 多了一个参数
+//     return n1 + n2
+// }
+
+// c = function(n1:number,n2:number,n3:number):number{ //报错 多了一个参数
+//     return n1 + n2
+// }
+
+// c = function(n1,n2,n3){ //报错 多了一个参数
+//     return n1 + n2
+// }
+
+// 9.数组---------------------------------------------------------------------------
+// 数组声明 1.类型[] 2.Array<类型>
+let arr1: string[];
+arr1 = ['1','w','r']
+
+let arr2: number[];
+arr2 = [1,2,2]
+
+let arr3:Array<number>;//数组泛型
+arr3 = [1,2,3]
+
+let arr4:Array<any>; //不推荐
+arr4 = [1,'2',true]
+
+// 10.元组 Tuple--------------------------------------------------------------------
+//元组就是固定长度的数组 类型必须一一对应
+//语法：[类型,类型]
+let h:[string,number,string];
+h = ['we',2,'1']
+
+// 11.枚举 enum---------------------------------------------------------------------
+enum Gender{
+    Male = 1,
+    FeMale = 0,    
+}
+
+let person:{name:string,gender:Gender}
+person = {
+    name:'张三',
+    gender:Gender.Male
+}
+console.log('判断张三是不是男的',person.gender === Gender.Male)

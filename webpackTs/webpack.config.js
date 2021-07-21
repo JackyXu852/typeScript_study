@@ -1,11 +1,3 @@
-/*
- * @Descripttion: file content
- * @version: 
- * @Author: Olivia
- * @Date: 2021-07-19 10:14:26
- * @LastEditors: Olivia
- * @LastEditTime: 2021-07-19 16:35:17
- */
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');

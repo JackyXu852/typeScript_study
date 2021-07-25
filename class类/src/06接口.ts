@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: file content
+ * @version: 
+ * @Author: Olivia
+ * @Date: 2021-07-20 15:21:25
+ * @LastEditors: Olivia
+ * @LastEditTime: 2021-07-23 17:35:02
+ */
 (function () {
 
 	// 类型别名 关键字type

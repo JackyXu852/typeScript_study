@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: file content
+ * @version: 
+ * @Author: Olivia
+ * @Date: 2021-07-19 16:56:59
+ * @LastEditors: Olivia
+ * @LastEditTime: 2021-07-23 15:31:06
+ */
 // 使用class来定义一个类
 // 对象中主要包含了两个部分：
 //     1.属性 =>“数据” 如人的身高、体重、年龄
@@ -8,7 +16,7 @@ class Person {
 	readonly name: string = '张三'; //属性前面加上readonly 只读属性
 	age: number = 23;
 
-	//静态属性/类属性 => 通过类获取 属性前面加一个static则是静态属性
+	//静态属性/通过类获取 属性前面加一个static则是静态属性
 	static weight: number = 120;
 	static readonly blood: string = "A";
 

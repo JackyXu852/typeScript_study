@@ -61,7 +61,7 @@ function get(params:any){
 
             console.log(args)
             console.log('方法装饰器！！')
-            oMethod.apply(this,args)//修改当前方法
+            oMethod.apply(this,args)//修改当前方法 //如果不用apply则当前方法就是替换而不是修改
 
         }
 

@@ -19,12 +19,13 @@ function DHttp(params:any){
 
 /* 属性装饰器 */
 function logProperty(params:any){
+    // params //属性装饰器穿入的参数
     return function (target:any,attr:any){
         
         target[attr] = params
 
-        console.log('logProperty=>target',target)
-        console.log('logProperty=>attr',attr)
+        console.log('logProperty=>target',target)//类的原型对象
+        console.log('logProperty=>attr',attr)//属性名字
     }
 }
 
